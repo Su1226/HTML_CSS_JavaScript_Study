@@ -1,0 +1,91 @@
+* {
+    font-size: 62.5%;
+}
+.box1 {
+    margin : 3rem;
+    border-width: 3rem;
+    border-style: solid;
+    padding : 3rem;
+    width: 3rem;
+    height: 3rem;
+    background-color: red;
+}
+
+.box2 {
+    /* display: inline-block; */
+    margin: 2rem;
+    border: 0.1rem solid #000;
+    padding: 1rem;
+    width: 10rem;  /* 10rem = 100px */
+}
+
+.box3 {
+    display: block; /* 블록 요소로 변경 */
+    margin: 2rem;
+    border: 0.1rem solid #000;
+    line-height: 2rem; /* 간격을 조절할 수 있다. 컨텐츠와는 다른 높이다.*/
+}
+
+.naver-login-container {    /* container가 적히면 박스를 의미함. */
+    box-sizing: border-box; /* 패딩과 테두리를 포함한 너비 계산 */
+    border: 0.1rem solid #dbdbdb;
+    border-radius: 0.8rem;
+    padding: 2.1rem 2rem 1.8rem; /* 상, 좌우, 하 순서로 패딩을 설정 */
+    width: 42rem; /* 420px */  
+    height: 16.4rem; /* 164px */    
+    line-height: 20px;
+}
+
+.login-info-message {
+    margin: 0 0 1.6rem; /* 16px */
+    font-size: 1.47rem; /* 14.7px */
+    text-align: center;
+
+    width: 38rem;
+    height: 2rem; /* 24px */
+    color: #101010;
+}
+
+.login-button {
+    display: block;
+    box-sizing: border-box;
+    border: 1.7px 0;
+    padding: 1.3rem 0 0;
+    border-radius: 0.4rem;
+    width: 38rem;
+    height: 5.8rem; /* 56px */
+    background-color: #03c75a;
+    text-align: center;
+    font-size: 1.47rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+.login-button-naver-text {
+    font-weight: bold;
+    font-size: 1.47rem; /* 14.7px */
+    font-weight: 900;
+}
+
+.login-button-login-text {
+    font-size: 1.47rem; /* 14.7px */
+}
+
+.login-bottom {
+    margin-top: 1.6rem; /* 16px */
+    text-align: center;
+}
+
+.bottom-link {
+    font-size: 1.365rem; /* 13.65px */
+    cursor: pointer;
+    color: #606060;
+}
+
+.div-nav {
+    display: inline-block;
+    margin: 0.4rem 1.2rem 0;
+    width: 0.1rem;
+    height: 1.2rem;
+    background-color: #d5d6d7;;
+}

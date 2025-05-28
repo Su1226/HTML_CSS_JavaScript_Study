@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* <link> 태그로는 잘 사용하지 않을 예정. CSS에서 바로 import할 에정*/
+        /* wghk@100..500은 크기를 100~500까지 사용할 수 있다.*/
+        /* 해당 링크의 폰트는 900이 최대이나 500까지로 조정.*/
+        /* 그래서 범위가 큰 것을 찾아 사용하는 것이 내 마음대로 조정하고 하기에는 편하다. */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..500&display=swap');
+
+        * {
+            font-family: "Noto Sans KR", sans-serif;
+            font-optical-sizing: auto;
+            font-size: 62.5%;
+            /* 웹의 기본 폰트 사이즈는 16px */
+            /* 62.5%는 16px의 62.5%로, 10px로 설정 */
+            /* 10px로 설정하면, 1rem = 10px이 된다. */
+            /* 1rem은 해상도가 달라져도 사이즈가 같게 해준다. */
+            /* 사용자의 컴퓨터의 해상도가 다르기 때문에, 비율을 같게 해줄 필요가 있다.*/
+        }
+
+        p {
+            color: blue;
+            font-size: 1.6rem; /* 1.6rem = 16px */
+            font-weight: 500; /* 400은 보통, 500은 약간 굵은 폰트 */
+            text-align: center; /* 가운데 정렬 */
+            text-decoration: line-through; /* 취소선 */
+            text-shadow: 0.5rem 0.5rem 1rem black;
+            letter-spacing: 10px; /* 글자 간격을 10px로 설정 */
+            word-spacing: 2rem;
+            background-color: #f0f0f000; /* 투명한 배경색 + 명암 0 */
+        }
+
+        ul {
+            list-style-type: none; /* 기본 리스트 스타일 제거 */
+        }
+
+        table {
+            border-collapse: collapse; /* 테두리 겹침 제거 */
+            border : 0.1rem solid #222; /* 테두리 두께 0.1rem, 색상 #222 */
+        }
+        
+        td {
+            border : 0.1rem solid #222; /* 테두리 두께 0.1rem, 색상 #222 */
+        }
+
+    </style>
+</head>
+<body>
+    <p>텍스트를 표현하는 다양한 스타일</p>
+    <ul>
+        <li>메일</li>
+        <li>카페</li>
+        <li>블로그</li>
+        <li>스토어</li>
+    </ul>
+
+    <table>
+        <tbody>
+            <tr>
+                <td>번호</td>
+                <td>이름</td>   
+                <td>나이</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>이수원</td>   
+                <td>25</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <span style="display: block;">네이버</span>
+    <b>네이버</b>
+</body>
+</html>

@@ -1,0 +1,71 @@
+html {
+    font-size: 62.5%;
+}
+
+.login-continer {
+    box-sizing: border-box;
+    border-radius: 0.8rem;
+    padding: 2.1rem 2rem 1.8rem;
+    width: 42rem;
+    box-shadow: 0 0 0 0.1rem #e3e5e8;
+}
+
+.login-continer > header > p {
+    display: flex;
+    margin: 0;
+    justify-content: center;
+    align-items: center;;
+    font-size: 1.47rem;
+    color : #101010;
+}
+
+.login-continer > main > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    margin-top: 1.3rem;
+    border: 0.1rem solid #00000006;
+    border-radius: 0.4rem;
+    padding: 1.7rem 0;;
+    width: 100%;
+    background-color: #03c75a;
+    color : #fff;
+    text-decoration: none;
+    & > * { /* 또는 * 대신 span을 써도 된다. &는 자기 자신을 의미하는 this이기도 하다.*/
+        margin-right: 0.5rem;
+        font-size: 1.47rem;
+        font-weight: 900;
+    }
+    &:hover {
+        background-color: #02b14d;
+    }
+}   
+
+.login-continer > footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.6rem;
+
+    & > a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #606060;
+        font-size: 1.365rem;
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;;
+        }
+
+        &:not(&:nth-of-type(1))::before {
+            content : "";
+            display: flex;
+            margin: 0.4rem 1.2rem;
+            width: 0.1rem;
+            height: 1.2rem;
+            background-color: #d5d7d8;
+        }
+    }
+}

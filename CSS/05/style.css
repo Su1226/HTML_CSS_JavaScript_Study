@@ -1,0 +1,85 @@
+html {
+    font-size: 62.5%;
+}
+
+.search-box {
+    border: 0.1rem solid black;
+    padding : 0.3rem;
+    width: fit-content;
+    border-radius: 0.4rem;
+
+    & > input {
+        border : none;
+        outline: none;
+    }
+}
+
+.search-box2 {
+    position: relative;
+    width: fit-content;
+
+    & > input {
+        box-sizing: border-box;
+        padding-right: 4rem;
+        height: 3.3rem;;
+    }
+
+    & > button {
+        position: absolute;
+        right: 0.5rem;
+        border: none;
+        border-radius: 50%;
+        width: 3rem;
+        height: 3rem;
+        font-size: 0.6rem;
+    }
+}
+
+/* posion은 가능한 남발하지 않는게 좋다.
+정말로 안되겠다. 의 경우에만  search-box처럼 만드는게 좋다.*/
+
+.p-box {
+    position: relative;
+    /* position: relative는 부모 박스 안에서만 움직이라는 의미로 해석될 수 있다.
+    만약 부모 박스에 relative가 없다면, 부모 박스를 벗어나서 움직인다.*/
+    box-sizing: border-box;
+    border: 0.1rem solid black;
+    width: 50rem;
+    height: 30rem;
+}
+
+/* 현재 p-box는 부모 박스, 
+c-box들은 p-box안에 있는 자식 박스들이다.*/
+
+.c-box {
+    box-sizing: border-box;
+    border: 0.1rem solid black;
+    width: 10rem;
+    height: 10rem;
+}
+
+.c-box1 {
+    background-color: red;
+}
+
+/* relateive는 원래 있던 위치를 기준으로 해서 이동한다.*/
+/* absolute는 부모 박스의 위치를 기준으로 해서 이동한다.
+때문에 absolute를 쓸 때는 보통 top과 left를 같이 써야 한다.*/
+.c-box2 {
+    background-color: green;
+}
+
+.c-box3 {
+    background-color: blue;
+}
+
+/* 부모 박스에 position이 없으면, 부모의 부모 박스까지 올라간다.*/
+.cc-box {
+    position: absolute; 
+    top: 10rem;
+    left: 10rem;
+    border: 0.1rem solid black;
+    width: 5rem;
+    height: 5rem;
+    background-color: yellow;
+}

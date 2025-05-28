@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 
+    구글 웹 폰트는 구글에서 제공하는 폰트로, 다양한 폰트를 무료로 사용할 수 있다.
+    구글 웹 폰트를 사용하려면, 구글 웹 폰트 사이트에서 원하는 폰트를 선택하고, 
+    해당 폰트의 링크를 복사하여 HTML 파일에 추가하면 된다.
+    구글 웹 폰트 사이트: https://fonts.google.com/ 
+    -->
+    <style>
+        * {     /* 모든 태그에 적용 */
+            font-style: italic;
+        }
+        p {     /* p 태그 전부 */   
+            color: blue;
+            font-size: 20px;    
+            /* background-color: transparent; */
+            background-color: #f0f0f0; /* 투명한 배경색 */
+        }
+
+        #p {    /* id가 p인 태그 */
+            /* id는 중복이 안되므로, 하나만 적용됨 */
+            color: green;
+            font-size: 30px;
+        }
+
+        .p {    /* class가 p인 태그 */
+            /* class는 여러개 적용될 수 있음 */
+            color: orange;
+            font-size: 25px;
+        }
+        div > h1 > .naver { /* div 태그의 자식 h1 태그의 자식 a 태그 중 class가 naver인 태그 */
+            /* div 태그의 자식 h1 태그의 자식 a 태그 중 class가 naver인 태그에만 적용 */
+            color: brown;
+        }
+        .naver { /* class가 naver인 태그 */
+            /* color: rgb(43, 255, 0); */
+            color: #2da82200; /* rgba(17, 1, 16, 0.0) */
+            font-size: 20px;
+        }
+
+        /*
+        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+        text-shadow: 2px 2px 2px #000000;   
+        text-shadow: 2px 2px 2px #000;   // rgba(0, 0, 0, 0.5)와 동일
+        text-shadow: 2px 2px 2px #00000000; // rgba(0, 0, 0, 0.0)와 동일    
+        가로거리, 세로거리, 흐림정도, 색상 순서대로 설정한다. 
+
+        letters-spacing: 2px;  // 글자 간격을 2px로 설정 (글자 사이에 적용)
+        word-spacing: 2px; // 단어 간격을 2px로 설정 (단어 사이에 적용)
+        주로 letters-spacing는 글자 간격을 조정할 때 사용하고,
+        word-spacing는 단어 간격을 조정할 때 사용한다.
+        (보통 word-spacing는 잘 사용하지 않음)
+        */
+    </style>
+</head>
+<body>
+    <h1 style="color: red; font-size:  40px;">제목</h1>
+    <div> 내용1 </div>
+    <p>내용 2-1</p>
+    <p id="p">내용 2-2</p>
+    <p class="p">내용 2-3</p>
+    <p id="p" class="p">내용 2-4</p>
+    <p> 
+        <h2>내용 2-5</h2>
+    </p>
+    <span>내용3</span>
+
+    <div>  
+        <h1>
+            <a class="naver" href="">네이버</a>
+        </h1>
+    </div>
+</body>
+</html>
