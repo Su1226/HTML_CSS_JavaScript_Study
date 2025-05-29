@@ -1,0 +1,8 @@
+.background-continer {
+    background-image: url(../../html/바탕화면원본.jpg);
+    background-position: center center;
+    box-sizing: content-box;
+    background-repeat: no-repeat;
+    background-attachment: fixed;;
+    height: 1000px;
+}

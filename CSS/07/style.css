@@ -1,0 +1,154 @@
+html {
+    font-size: 62.5%;
+    /* 1rem = 10px */
+}
+
+/* div > h1 ~ p { 
+    color: blue;
+} */
+ /* ~ sibling combinator (h1부터 p까지) */
+
+div > h1 + p { /* + adjacent sibling combinator (h1의 바로 인접한 p 형제만) */
+    color: red;
+}
+
+.buttons {
+
+    /* 강사님께서 많이 사용하시는 방법! (버튼이 화이트인 경우) */
+    & > div {
+        box-sizing: border-box;
+        border: 0.1rem solid #dbdbdb;
+        background-color: #fff;
+        padding: 0.5rem 1rem;
+        width: fit-content;
+        cursor: pointer; /* pointer cursor는 default나 pointer 둘 중 하나. */
+
+        &:hover { /* 마우스가 올라갔을 때는 살짝 연하게.*/
+            background-color: #fafafa;
+        }
+
+        &:active { /* 클릭을 했을 때는 더 진하게. */
+            background-color: #eee;
+        }
+    }
+
+    & > a {
+        box-sizing: border-box;
+        border: 0.1rem solid #dbdbdb;
+        background-color: #fff;
+        padding: 0.5rem 1rem;
+        width: fit-content;
+        cursor: pointer; /* pointer cursor는 default나 pointer 둘 중 하나. */
+        color: black; /* a 태그는 기본적으로 파란색이기 때문에 색상을 지정해줘야 한다. */
+        text-decoration: none; /* a 태그의 밑줄 제거 */;
+
+
+        &:hover { /* 마우스가 올라갔을 때는 살짝 연하게.*/
+            background-color: #fafafa;
+        }
+
+        &:active { /* 클릭을 했을 때는 더 진하게. */
+            background-color: #eee;
+        }
+    }
+
+    & > button {
+        box-sizing: border-box;
+        border: 0.1rem solid #dbdbdb;
+        border-radius: 0.4rem; /* 버튼의 모서리를 둥글게 */
+        background-color: #fff;
+        padding: 0.5rem 1rem;
+        width: fit-content;
+        cursor: pointer;
+
+        &:hover { /* 마우스가 올라갔을 때는 살짝 연하게.*/
+            background-color: #fafafa;
+        }
+
+        &:active { 
+            background-color: #eee;
+        }
+
+        &:disabled { /* 버튼이 비활성화 되었을 때 */
+            background-color: red; /* 비활성화된 버튼은 빨간색으로 표시 */
+            cursor: default; /* 클릭할 수 없다는 것을 나타내는 커서 */
+        }
+    }
+}
+
+#button2:target {
+    /* #button2가 target이 되었을 때 */
+    width: 10rem;
+    height: 10rem;
+    background-color: red;
+}
+
+.check > input[type=checkbox] + label {
+    color: blue;
+
+}   
+
+.check > input[type=checkbox]:checked + label {
+    color: red;
+}   
+
+.check > input[type=radio] + label {
+    color: blue;
+
+}   
+
+.check > input[type=radio]:checked + label {
+    color: red;
+} 
+
+.not > input:not(#text2) {
+    background-color: green;
+}
+
+.menu-list {
+
+    & > li {
+        position: relative;
+        border: 0.1rem solid #dbdbdb;
+        width: fit-content;
+        cursor: pointer;
+
+        & > div {
+            display: none; /* 기본적으로 숨김 */
+        }
+/* 
+        &:hover > div { // 마우스가 올라갔을 때만 보이도록 ;
+            display: block;  
+            position: absolute;
+            top: 0;
+            right: -22rem;
+            background-color: yellow;
+            width: fit-content
+        } 
+*/
+
+        &:active > div {
+            display: block; /* 클릭했을 때도 보이도록 */
+            position: absolute;
+            top: 0;
+            right: -22rem;
+            background-color: yellow;
+            width: fit-content
+        }
+    }
+}
+
+.menu-list2 li:nth-of-type(2n-1) { /* 짝수번째 li에만 적용 : 2n, 홀수번째 li에만 적용 : 2n-1*/
+    /* .menu-list2의 두 번째 li에만 적용 */
+    color: brown;
+}
+
+.menu-list2 > li::before {
+    content: "menu";
+    border: 0.1rem solid #dbdbdb;
+    color: pink;
+}
+
+.menu-list2 > li::after {
+    content: "->";
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        <h1>기준</h1>
+        <p>인접형제</p>
+        <h2>텍스트</h2>
+        <p>인접형제</p>
+    </div>
+
+    
+    <div class="buttons">
+    <!-- 아래 3개 모두 button 모양으로 만들 수 있다.-->
+        <div >버튼1</div>
+        <a href="#button2">버튼2</a>
+        <button disabled>버튼3</button>
+        <!-- div전을 쓰는 것 보다 button을 쓰는 것이 낫다. (시맨틱적인 의미가 있다.)
+         그러나 div을 쓸 때도 있다.
+         둘의 사용을 구분하는 것은 value로 따진다. 
+         value가 필요하면 button으로, 없어도 돼면 div으로 버튼 모양으로 만들어 준다.
+         
+         즉, 상황에 따라서 골라서 사용하면 된다.
+         -->
+    </div>
+
+    <!-- 아래는 버튼2를 클릭했을 때 이동할 곳이다. 
+     a태그에 #button을 붙여줬기 때문에, 주소창에 #button2가 붙여지며, 
+     버튼을 누를 시, 아래의 박스가 나온다.
+     -->
+    <div id="button2">
+
+    </div>
+
+    <div class="check">
+        <input type="checkbox">
+        <label for="">축구</label>
+        <input type="checkbox">
+        <label for="">농구</label>
+
+        <input type="radio" name="s" id="">
+        <label for="">선택1</label>
+        <input type="radio" name="s" id="">
+        <label for="">선택2</label>
+        <input type="radio" name="s" id="">
+        <label for="">선택3</label>
+    </div>
+
+    <div class="not">
+        <input type="text"> 
+        <input type="text" id="text2"> 
+        <input type="text"> 
+    </div>
+
+    <ul class="menu-list">
+        <li>메뉴1
+            <div class="menu-info">메뉴1 입니다.</div>
+        </li>
+        <li>메뉴2</li>
+        <li>메뉴3</li>
+    </ul>
+
+    <ul class="menu-list2">
+        <li>java</li>
+        <li>python</li>
+        <li>c++</li>
+        <li>javascript</li>
+    </ul>
+
+</body>
+</html>

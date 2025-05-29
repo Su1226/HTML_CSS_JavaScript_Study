@@ -1,0 +1,90 @@
+html {
+    font-size: 62.5%;
+}
+
+.p-box {
+    position: relative;
+    box-sizing: border-box;
+    border: 0.1rem solid #222;
+    width: 30rem;
+    height: 30rem;
+}
+
+.c-box {
+    position: absolute;
+    top : 50%;
+    left : 50%;
+    transform: translate(-50%, -50%);
+    transition: all 1s ease-in-out;
+    /* transform: translate(-50%, -50%) translateZ(0); */
+    box-sizing: border-box;
+    border: 0.1rem solid #222;
+    width: 10rem;
+    height: 10rem;
+
+    /* 속성이 겹쳐서 중앙에 있지 않고 변경 된다.
+    기존의 transform을 유지하기 위해서는 그대로 써줘야 함.*/
+    &:hover {
+        transform: translate(-50%, -50%) scale(1.5) rotate(45deg);
+    }
+}
+
+
+
+/* 두 박스가 동일한 조건을 가지고 있는 경우에 다음과 같이 작성할 수 있다.*/
+.a-box1, .a-box2 {
+    box-sizing: border-box;
+    border: 0.1rem solid #222;
+    width: 10rem;
+    height: 10rem;
+}
+
+@keyframes a1 { 
+    from { /* 시작점 */
+        transform: scale(1);
+    }
+    to { /* 끝점 */
+        transform: scale(2);
+    }
+}
+
+@keyframes a2 {
+    0%{
+        transform: translate(0);
+        /* x축 이동 */
+    } /* 시작점 */
+
+    10% {
+        transform: translate(20%); 
+        /* x축 이동 */
+    } /* 중간점 */
+
+    20% {
+        transform: translate(20%, 20%); 
+        /* x축, y축 이동 */
+    } /* 중간점 */
+    
+    100%{
+        transform: translate(100%, 100%);
+        /* 자기 너비의 100% 만큼만 움직인다.*/
+        /* x축, y축 이동 */
+    } /* 끝점 */
+    /* 0%와 100%는 생략 가능. */
+
+}
+
+.a-box1 {
+    animation-name: a1;
+    animation-duration: 5s; /* 애니메이션이 5초 동안 진행된다. */
+    animation-iteration-count: infinite; 
+    animation-direction: alternate; /* 애니메이션이 끝나면 반대로 진행된다. (이 애니메이션에서는 다시 크기가 줄어드는 형태)*/
+    /* 값을 넣어주면 애니메이션이 n번 반복된다. 끝나면 끝.*/
+    /* 무한 반복 : infinite*/
+}
+
+.a-box2 {
+    animation-name: a2;
+    animation-duration: 3s; 
+    animation-iteration-count: infinite; 
+    animation-direction: alternate;
+}
