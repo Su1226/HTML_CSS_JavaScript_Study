@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .top-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mid-box {
+            display: flex;
+            flex-direction: column;
+            & > input {
+                width: 100px;
+                text-align: center;
+            }
+        }
+
+        .left-box, .right-box {
+            box-sizing: border-box;
+            border: 1px solid #000;
+            width: 500px;
+            height: 600px;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-container">
+        <ul class="left-box">
+    
+        </ul>
+        <div class="mid-box">
+            <input type="text" placeholder="번호입력">
+            <button id="move">이동</button>
+            <button id="remove">삭제</button>
+        </div>
+        <ul  class="right-box">
+            
+        </ul>
+    </div>
+
+    <script>
+        const bookList = [
+            { id:1, title: "자바스크립트 완벽 가이드", price: 38000 },
+            { id:2, title: "모던 자바스크립트 입문", price: 29000 },
+            { id:3, title: "리액트 실전 활용", price: 33000 },
+            { id:4, title: "스프링 부트 입문", price: 35000 },
+            { id:5, title: "알고리즘 문제 해결 전략", price: 42000 },
+            { id:6, title: "프로그래머를 위한 자료구조와 알고리즘", price: 31000 },
+            { id:7, title: "도메인 주도 설계", price: 47000 },
+            { id:8, title: "클린 코드", price: 39000 },
+            { id:9, title: "소프트웨어 장인", price: 36000 },
+            { id:10, title: "마이크로서비스 아키텍처", price: 40000 },
+        ];
+
+        let selectedBookList = [];
+
+        window.onload = () => {
+             const leftBox = document.querySelector(".left-box");
+            leftBox.innerHTML = bookList.map(book => `<li>${book.id}. ${book.title}(${book.price}원)</li>`).join("");
+        }
+
+        function reload() {
+            const rightBox = document.querySelector(".right-box");
+            rightBox.innerHTML = selectedBookList.map(book => `<li>${book.id}. ${book.title}(${book.price}원)</li>`).join("");
+        }
+
+        function isEmpty(str) {
+            if (!str) {
+                alert("번호를 입력하세요.")
+            };
+            return !str;
+        }
+
+        const moveButton = document.querySelector('#move');
+        moveButton.onclick = () => {
+            const numberInput = document.querySelector(".mid-box > input");
+            const numberInputValue = numberInput.value;
+
+            if(isEmpty(numberInputValue)) return;
+
+            const foundBook = bookList.find(book => book.id === parseInt(numberInputValue));
+            if (!foundBook) {
+                alert("해당 번호의 도서는 없습니다.");
+                return;
+            }
+
+            if (!!selectedBookList.find(book => book.id === parseInt(numberInputValue))) {
+                alert("이미 존재하는 도서입니다.");
+                return;
+            }
+            selectedBookList = [...selectedBookList, foundBook];
+            reload(); 
+        }
+
+        const removeButton = document.querySelector('#remove');
+        removeButton.onclick = () => {
+            const numberInput = document.querySelector(".mid-box > input");
+            const numberInputValue = numberInput.value;
+
+            if(isEmpty(numberInputValue)) return;
+
+            const removeBook = selectedBookList.find(book => book.id === parseInt(numberInputValue));
+                
+            if(!removeBook) {
+                alert("해당 번호가 없습니다.");
+                return;
+            }
+
+            selectedBookList = selectedBookList.filter(book => book.id !== parseInt(numberInputValue));
+            reload();
+        }
+
+    </script>
+</body>
+</html>
