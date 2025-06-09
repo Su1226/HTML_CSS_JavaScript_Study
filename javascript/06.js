@@ -13,7 +13,7 @@
 
  // false 일 떄는 뒤의 값을 가져옴.
 // || 연산 : 앞의 값이 false 일 떄, 뒤의 값을 리턴하고 true일 때 true를 처리
- console.log(true || 10);
+console.log(true || 10);
 console.log(false || 10);
 
 // ?? 연산 : 앞의 값이 null 또는 undefined가 아니라면 앞의 값, 그 외에는 뒤의 값.
